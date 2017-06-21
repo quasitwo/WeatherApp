@@ -12,7 +12,7 @@ class WeatherTableViewController: UITableViewController {
     
     let cellIdentifier = "WeatherTableViewCell"
     let baseCities = [City(name: "Новосибирск",     id: 1496747),
-                      City(name: "Санктvarетербург", id: 519690),
+                      City(name: "Санкт-Петербург", id: 519690),
                       City(name: "Екатеринбург",    id: 1494346),
                       City(name: "Москва",          id: 524901),
                       City(name: "Омск",            id: 1496153),
@@ -35,8 +35,9 @@ class WeatherTableViewController: UITableViewController {
     }
     
     func loadUserCities() {
-        let decoded  = UserDefaults.standard.object(forKey: "userCities") as! Data
-        let decodedCities = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! [City]?
+        let decoded  = UserDefaults.standard.object(forKey: "userCities") as! Data?
+        guard decoded != nil else { return }
+        let decodedCities = NSKeyedUnarchiver.unarchiveObject(with: decoded!) as! [City]?
         allCities = []
         baseCities.forEach({
             allCities.append($0)
@@ -44,6 +45,7 @@ class WeatherTableViewController: UITableViewController {
         decodedCities?.forEach({
             allCities.append($0)
         })
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

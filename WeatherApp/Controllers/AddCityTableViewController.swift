@@ -43,16 +43,17 @@ class AddCityTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let decoded  = UserDefaults.standard.object(forKey: "userCities") as! Data
-        var decodedCities = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! [City]?
-        if decodedCities == nil {
-            decodedCities = []
+        var userCities: [City]? = []
+        if let decoded = UserDefaults.standard.object(forKey: "userCities") {
+            if let decodedCities = NSKeyedUnarchiver.unarchiveObject(with: decoded as! Data) as! [City]? {
+                userCities = decodedCities
+            }
         }
         let selectedCity = cityList[indexPath.row]
         let newCity = City(name: selectedCity.name, id: selectedCity.id)
-        decodedCities!.append(newCity)
+        userCities!.append(newCity)
         
-        let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: decodedCities as Any)
+        let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: userCities as Any)
         UserDefaults.standard.set(encodedData, forKey: "userCities")
         navigationController?.popViewController(animated: true)
     }

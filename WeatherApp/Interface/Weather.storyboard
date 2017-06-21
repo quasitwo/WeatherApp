@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NdU-bc-WxS" id="me7-f2-nJF">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -37,7 +37,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Xk5-1j-IHg"/>
                     <connections>
-                        <segue destination="ygW-ax-a8Q" kind="show" identifier="addCity" action="showDetailViewController:sender:" id="8tL-SR-r1P"/>
+                        <segue destination="AhP-il-avD" kind="show" identifier="addCity" id="4Ax-jf-sBT"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fuI-hh-Zwo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -45,12 +45,12 @@
             <point key="canvasLocation" x="1271.2" y="46.326836581709152"/>
         </scene>
         <!--AddCity-->
-        <scene sceneID="NmK-RL-xib">
+        <scene sceneID="sT9-e1-ey4">
             <objects>
-                <viewControllerPlaceholder storyboardName="AddCity" id="ygW-ax-a8Q" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Ew-IQ-aEC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="AddCity" id="AhP-il-avD" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H7R-f1-HPx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1938" y="-31"/>
+            <point key="canvasLocation" x="1977" y="-39"/>
         </scene>
         <!--WeatherDetails-->
         <scene sceneID="H1X-RY-QqT">
