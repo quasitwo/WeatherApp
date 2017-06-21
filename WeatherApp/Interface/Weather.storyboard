@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NUS-R2-s5J">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Weather Table View Controller-->
+        <scene sceneID="dNN-UT-ttV">
+            <objects>
+                <tableViewController id="was-HF-xYH" customClass="WeatherTableViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="yOI-zz-feN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="NdU-bc-WxS">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NdU-bc-WxS" id="me7-f2-nJF">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="mdD-Ca-G8k" kind="show" identifier="weatherDetails" id="Sfz-xZ-891"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="was-HF-xYH" id="ej3-gT-inV"/>
+                            <outlet property="delegate" destination="was-HF-xYH" id="KvG-G4-8EE"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Xk5-1j-IHg"/>
+                    <connections>
+                        <segue destination="ygW-ax-a8Q" kind="show" identifier="addCity" action="showDetailViewController:sender:" id="8tL-SR-r1P"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fuI-hh-Zwo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1271.2" y="46.326836581709152"/>
+        </scene>
+        <!--AddCity-->
+        <scene sceneID="NmK-RL-xib">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AddCity" id="ygW-ax-a8Q" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Ew-IQ-aEC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1938" y="-31"/>
+        </scene>
+        <!--WeatherDetails-->
+        <scene sceneID="H1X-RY-QqT">
+            <objects>
+                <viewControllerPlaceholder storyboardName="WeatherDetails" id="mdD-Ca-G8k" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mvh-bp-pkV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1975" y="16"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KNl-KV-ySO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NUS-R2-s5J" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eR9-Df-csD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="was-HF-xYH" kind="relationship" relationship="rootViewController" id="hXW-Yl-u39"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MLk-OA-e1o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="332" y="46.326836581709152"/>
+        </scene>
+    </scenes>
+</document>
